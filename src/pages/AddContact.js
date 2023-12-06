@@ -89,7 +89,7 @@ const AddContact = () => {
   const addContact = (data) => {
     const existingContacts = JSON.parse(localStorage.getItem("contacts")) || [];
 
-    existingContacts.push({ id: new Date().getTime(), ...data });
+    existingContacts.push({ id: new Date().getTime().toString(), ...data });
 
     localStorage.setItem("contacts", JSON.stringify(existingContacts));
   };

@@ -85,9 +85,9 @@ const EditContact = () => {
   useEffect(() => {
     const contacts = JSON.parse(localStorage.getItem("contacts"));
 
-    const data = contacts.find((item) => item.id == id);
+    const data = contacts.find((item) => item.id === id);
 
-    if (data?.name) {
+    if (data.name) {
       const updatedDefaultValues = {
         name: data.name,
         lastName: data.lastName,
@@ -102,7 +102,7 @@ const EditContact = () => {
     } else {
       reset(defaultValues);
     }
-  }, [reset]);
+  }, [id, reset]);
 
   const { fields: emails, append: emailAppend } = useFieldArray({
     control,
