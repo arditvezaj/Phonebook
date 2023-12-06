@@ -87,7 +87,7 @@ const EditContact = () => {
 
     const data = contacts.find((item) => item.id === id);
 
-    if (data?.email) {
+    if (data.name) {
       const updatedDefaultValues = {
         name: data.name,
         lastName: data.lastName,
@@ -102,7 +102,7 @@ const EditContact = () => {
     } else {
       reset(defaultValues);
     }
-  }, [id, reset]);
+  }, [reset]);
 
   const { fields: emails, append: emailAppend } = useFieldArray({
     control,
