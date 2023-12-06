@@ -87,7 +87,7 @@ const EditContact = () => {
 
     const data = contacts.find((item) => item.id === id);
 
-    if (data.email) {
+    if (data?.email) {
       const updatedDefaultValues = {
         name: data.name,
         lastName: data.lastName,
